@@ -65,10 +65,15 @@ public class CourseService {
     public void totalCredits(String studentId) {
     	Student student = students.get(studentId);
     	int credits=0;
-    	for (Course course :student.enrolledCourses ) {
+        if(student != null){
+       for (Course course :student.enrolledCourses ) {
     		credits+= course.credits;
     	}
     	System.out.println("Total credits: "+ credits);
+        }else{
+            System.out.println("Student Not Found  !");
+        }
+    	
     }
     }
 
